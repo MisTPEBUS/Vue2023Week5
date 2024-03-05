@@ -57,9 +57,8 @@ Vue.createApp({
             , 3000); 
     },
     getProducts(page,category) {
-      console.log(apiUrl);
-      console.log(apiPath);
-    /*   */
+    
+  
      const url = `https://vue3-course-api.hexschool.io/v2/api/lobinda/products/all`;
       axios.get(url,{params:{page:page,category:category, }}).then((response) => {
         this.products = response.data.products;
@@ -72,8 +71,8 @@ Vue.createApp({
       
       this.loadingStatus.loadingItem = id;
       axios.get(url).then((response) => {
-        console.log(response);
-       // const {} = response.data;
+       // console.log(response);
+       
         this.loadingStatus.loadingItem = '';
         this.product = response.data.product;
         this.$refs.userProductModal.openModal();
